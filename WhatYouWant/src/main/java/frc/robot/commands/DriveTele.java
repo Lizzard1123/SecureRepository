@@ -13,7 +13,7 @@ public class DriveTele extends CommandBase{
         RobotContainer.differential.setSpeed(Constants.maxSpeed);
     }
     public void execute(){
-        RobotContainer.differential.differentialDrive(RobotContainer.stick.getLeftJoyY(), RobotContainer.stick.getRightJoyY());
+        RobotContainer.differential.differentialDrive(RobotContainer.stickMain.getLeftJoyY(), RobotContainer.stickMain.getRightJoyY());
     }
     public boolean isFinished(){
         return false; 

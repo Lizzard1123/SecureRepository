@@ -1,0 +1,9 @@
+https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gearsbot
+^subsystems
+
+drive train
+https://github.com/FranklinMarquette/NewMecanumCode/blob/master/Copy%20of%20Copy%20of%20Getting%20Started/src/org/usfirst/frc/team4623/robot/Mecanum.java
+
+
+pretty much everything:
+https://github.com/FranklinMarquette/NewMecanumCode/tree/master/Copy%20of%20Copy%20of%20Getting%20Started/src/org/usfirst/frc/team4623/robot

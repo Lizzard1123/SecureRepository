@@ -22,11 +22,12 @@ public class DriveTrain extends SubsystemBase{
 
     public DriveTrain(){
         super();
-
+        SmartDashboard.getKeys();
         addChild("Drive", drive);
         SmartDashboard.getNumber("Max Drive Speed", 100);
-        //SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
+        SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
         SmartDashboard.putNumber("Turtle", Constants.turtle);
+        SmartDashboard.putNumber("Rabbit", Constants.rabbit);
     }
    public void periodic(){
        drive.check();

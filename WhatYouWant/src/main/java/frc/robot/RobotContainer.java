@@ -49,7 +49,7 @@ public class RobotContainer {
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
-    differential.setDefaultCommand(new DriveTele(RobotContainer.differential)); 
+    differential.setDefaultCommand(new DriveTele(differential)); 
     // Configure the button bindings
     configureButtonBindings();
   }

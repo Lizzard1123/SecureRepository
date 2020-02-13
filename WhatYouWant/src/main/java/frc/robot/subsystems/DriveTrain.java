@@ -32,8 +32,7 @@ public class DriveTrain extends SubsystemBase{
         if(leftSpeed<5 && leftSpeed>-5){leftSpeed = 0;}
         if(rightSpeed<5 && rightSpeed>-5){rightSpeed = 0;}
         
-        left.set(leftSpeed*-1);
-        backRightDrive.set(rightSpeed);
+        drive.tankDrive(leftSpeed, rightSpeed);
 
     }
 

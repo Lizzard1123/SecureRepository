@@ -38,7 +38,7 @@ public class RobotContainer {
   public static XBox stickMain = new XBox(0);
   public static XBox stickSecondary = new XBox(1);
   public static DriveTrain differential = new DriveTrain();
-  public static Autonomous m_autoCommand = new Autonomous(differential);
+  public static Autonomous m_autoCommand = new Autonomous();
   public static LazySusan susan = new LazySusan();
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();

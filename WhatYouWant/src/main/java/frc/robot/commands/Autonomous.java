@@ -7,7 +7,7 @@ import frc.robot.subsystems.DriveTrain;
 
 public class Autonomous extends SequentialCommandGroup{
     public Autonomous(DriveTrain drive){
-        RobotContainer.differential.differentialDrive(10, 10);
+        RobotContainer.differential.differentialDrive(50, 50);
         Timer.delay(3);
         //addCommands();
     }

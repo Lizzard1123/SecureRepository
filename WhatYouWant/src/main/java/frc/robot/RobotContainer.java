@@ -49,7 +49,7 @@ public class RobotContainer {
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
-    differential.setDefaultCommand(new DriveTele(differential)); 
+    differential.setDefaultCommand(new DriveTele(differential, stickMain)); 
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -74,6 +74,7 @@ public class RobotContainer {
      lowerArm.whenHeld(new LowerArm(arm));
      liftElevator.whenHeld(new LiftLift(lift));
      lowerElevator.whenHeld(new LowerLift(lift));
+
     
      
  }

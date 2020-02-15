@@ -4,8 +4,9 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase; 
 // import frc.robot.Constants; 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive; 
-import edu.wpi.first.wpilibj.SpeedControllerGroup; 
-
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import frc.robot.RobotContainer;
+import frc.robot.commands.DriveTele;
 public class DriveTrain extends SubsystemBase{
     public final Spark frontRightDrive = new Spark(0); 
     public final Spark frontLeftDrive = new Spark(1); 
@@ -26,6 +27,9 @@ public class DriveTrain extends SubsystemBase{
         if(!(drive.isSafetyEnabled())){
             drive.setSafetyEnabled(true);
         } 
+    }
+    public void initDefaultCommand(){
+        setDefaultCommand(new DriveTele(RobotContainer.differential, RobotContainer.stickMain));
     }
 
     public void differentialDrive(double leftSpeed, double rightSpeed){

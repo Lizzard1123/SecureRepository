@@ -24,7 +24,10 @@ import frc.robot.commands.SpinClockwise;
 import frc.robot.commands.LiftArm;
 import frc.robot.commands.LowerArm;
 import frc.robot.commands.LiftLift;
-import frc.robot.commands.LowerLift; 
+import frc.robot.commands.LowerLift;
+import frc.robot.subsystems.Intake;
+import frc.robot.commands.TakeBall; 
+import frc.robot.commands.ShootBall;
 
 
 /**
@@ -42,6 +45,7 @@ public class RobotContainer {
   public static LazySusan susan = new LazySusan();
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();
+  public static Intake take = new Intake();
 
 
 
@@ -65,6 +69,8 @@ public class RobotContainer {
     JoystickButton susanCounterClockwise = new JoystickButton(stickSecondary, XBox.B_BUTTON);
     JoystickButton liftArm = new JoystickButton(stickSecondary, XBox.LB_BUTTON);
     JoystickButton lowerArm = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
+    JoystickButton takeBall = new JoystickButton(stickSecondary, XBox.B_BUTTON);
+    JoystickButton shootBall = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
     JoystickButton liftElevator = new JoystickButton(stickMain, XBox.LB_BUTTON);
     JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.RB_BUTTON);
 
@@ -74,6 +80,8 @@ public class RobotContainer {
      lowerArm.whenHeld(new LowerArm(arm));
      liftElevator.whenHeld(new LiftLift(lift));
      lowerElevator.whenHeld(new LowerLift(lift));
+     takeBall.whenHeld(new TakeBall(take));
+     shootBall.whenHeld(new ShootBall(take));
 
     
      

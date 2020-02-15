@@ -22,12 +22,15 @@ public class DriveTele extends CommandBase{
     }
     public void initialize(){
         //RobotContainer.differential.setSpeed(Constants.maxSpeed);
-    }
-    public void execute(){
+        
         SmartDashboard.putNumber("Turtle",Constants.turtle);
         SmartDashboard.putNumber("Rabbit", Constants.rabbit);
         SmartDashboard.putNumber("Max Speed", Constants.maxSpeed);
-        RobotContainer.differential.differentialDrive(RobotContainer.stickMain.getLeftJoyY()-30, RobotContainer.stickMain.getRightJoyY()-30);
+
+    }
+    public void execute(){
+        
+        RobotContainer.differential.differentialDrive(RobotContainer.stickMain.getLeftJoyY(), RobotContainer.stickMain.getRightJoyY());
     }
     public boolean isFinished(){
         return false; 

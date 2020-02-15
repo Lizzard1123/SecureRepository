@@ -46,6 +46,7 @@ public class RobotContainer {
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();
   public static Intake take = new Intake();
+  //public static NetworkTable table = Robot.getTable();
 
 
 
@@ -54,6 +55,15 @@ public class RobotContainer {
    */
   public RobotContainer() {
     differential.setDefaultCommand(new DriveTele(differential)); 
+
+    SmartDashboard.putNumber("Arm Speed", Constants.armSpeed);
+    SmartDashboard.putNumber("Turtle", Constants.turtle);
+    SmartDashboard.putNumber("Rabbit", Constants.rabbit);
+    SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
+    SmartDashboard.putNumber("Intake Speed", Constants.intakeSpeed);
+    SmartDashboard.putNumber("Up Speed", Constants.upSpeed);
+    SmartDashboard.putNumber("Down Speed", Constants.downSpeed);
+    SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     // Configure the button bindings
     configureButtonBindings();
   }

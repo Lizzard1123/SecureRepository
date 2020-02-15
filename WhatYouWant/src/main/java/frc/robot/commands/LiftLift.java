@@ -1,11 +1,12 @@
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Lift;
-import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
 public class LiftLift extends CommandBase{
+    private double goinUp;
     public LiftLift(Lift lift){
         addRequirements(lift);
     }
@@ -13,7 +14,8 @@ public class LiftLift extends CommandBase{
 
     }
     public void execute(){
-        RobotContainer.lift.wiggleLift(Constants.upSpeed);
+        goinUp = SmartDashboard.getNumber("Up Speed", 30);
+        RobotContainer.lift.wiggleLift(goinUp);
     }
     public boolean isFinished(){
         return false;

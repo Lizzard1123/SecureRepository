@@ -19,10 +19,10 @@ public final class Constants {
     public static double maxSpeed = 100;
     public static double strafeSpeed;
     public static double speedDivisor = 2;
-    public static double turtle = (RobotContainer.stickMain.getLeftTrigger());
-    public static double rabbit= (RobotContainer.stickMain.getRightTrigger());
-    public static double slow = turtle*100;
-    public static double fast = rabbit*100;
+    public static double turtle; //= (RobotContainer.stickMain.getLeftTrigger());
+    public static double rabbit;//= (RobotContainer.stickMain.getRightTrigger());
+    //public static double slow = turtle*100;
+    //public static double fast = rabbit*100;
     public static double lazySusanSpeed;
     public static double armSpeed;
     public static double intakeSpeed;

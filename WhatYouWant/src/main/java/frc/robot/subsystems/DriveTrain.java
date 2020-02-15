@@ -26,17 +26,23 @@ public class DriveTrain extends SubsystemBase{
         drive.check();
         if(!(drive.isSafetyEnabled())){
             drive.setSafetyEnabled(true);
-        } 
+        }
+        /**
+         * System.out.println(RobotContainer.stickMain.getLeftJoyY());
+         * System.out.println(RobotContainer.stickMain.getRightJoyY()); 
+         */
+        
     }
     public void initDefaultCommand(){
-        setDefaultCommand(new DriveTele(RobotContainer.differential, RobotContainer.stickMain));
+        //setDefaultCommand(new DriveTele(RobotContainer.differential, RobotContainer.stickMain));
     }
 
     public void differentialDrive(double leftSpeed, double rightSpeed){
-        if(leftSpeed<5 && leftSpeed>-5){leftSpeed = 0;}
+        /**
+         * if(leftSpeed<5 && leftSpeed>-5){leftSpeed = 0;}
         if(rightSpeed<5 && rightSpeed>-5){rightSpeed = 0;}
-        
-        drive.tankDrive(leftSpeed, rightSpeed);
+         */
+            drive.tankDrive(leftSpeed, rightSpeed);
 
     }
 

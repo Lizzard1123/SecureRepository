@@ -1,6 +1,6 @@
 package frc.robot.subsystems; 
 
-import edu.wpi.first.wpilibj.Spark; 
+import edu.wpi.first.wpilibj.Talon; 
 import edu.wpi.first.wpilibj2.command.SubsystemBase; 
 // import frc.robot.Constants; 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive; 
@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotContainer;
 import frc.robot.commands.DriveTele;
 public class DriveTrain extends SubsystemBase{
-    public final Spark frontRightDrive = new Spark(0); 
-    public final Spark frontLeftDrive = new Spark(1); 
-    public final Spark backLeftDrive = new Spark(2); 
-    public final Spark backRightDrive = new Spark(3); 
+    public final Talon frontRightDrive = new Talon(0); 
+    public final Talon frontLeftDrive = new Talon(1); 
+    public final Talon backLeftDrive = new Talon(2); 
+    public final Talon backRightDrive = new Talon(3); 
 
     public final SpeedControllerGroup left = new SpeedControllerGroup(frontLeftDrive, backLeftDrive); 
     public final SpeedControllerGroup right = new SpeedControllerGroup(frontRightDrive, backRightDrive); 

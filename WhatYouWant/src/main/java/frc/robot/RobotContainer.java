@@ -41,11 +41,11 @@ public class RobotContainer {
   public static XBox stickMain = new XBox(0);
   public static XBox stickSecondary = new XBox(1);
   public static DriveTrain differential = new DriveTrain();
-  public static Autonomous m_autoCommand = new Autonomous(differential);
   public static LazySusan susan = new LazySusan();
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();
   public static Intake take = new Intake();
+  public static Autonomous m_autoCommand = new Autonomous(differential, arm);
   //public static NetworkTable table = Robot.getTable();
 
 
@@ -64,6 +64,7 @@ public class RobotContainer {
     SmartDashboard.putNumber("Up Speed", Constants.upSpeed);
     SmartDashboard.putNumber("Down Speed", Constants.downSpeed);
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
+    SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
     // Configure the button bindings
     configureButtonBindings();
   }

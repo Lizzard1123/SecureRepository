@@ -25,5 +25,6 @@ public final class Constants {
     public static double intakeSpeed;
     public static double upSpeed;
     public static double downSpeed;
+    public static double autoDriveSpeed;
   
 }

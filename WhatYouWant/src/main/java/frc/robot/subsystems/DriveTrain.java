@@ -1,31 +1,37 @@
 package frc.robot.subsystems; 
 
-import edu.wpi.first.wpilibj.VictorSP;
-import edu.wpi.first.wpilibj2.command.SubsystemBase; 
-import edu.wpi.first.wpilibj.drive.DifferentialDrive; 
+import com.ctre.phoenix.motorcontrol.can.*;
+import com.ctre.phoenix.motorcontrol.*;
+import com.ctre.phoenix.motorcontrol.GroupMotorControllers;
+import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
+
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import frc.robot.RobotContainer;
-import frc.robot.commands.DriveTele;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 public class DriveTrain extends SubsystemBase{
-    public final VictorSP frontRightDrive = new VictorSP(1); 
-    public final VictorSP frontLeftDrive = new VictorSP(2); 
-    public final VictorSP backLeftDrive = new VictorSP(3); 
-    public final VictorSP backRightDrive = new VictorSP(4); 
+    public final VictorSPX frontRightDrive = new VictorSPX(1); 
+    public final VictorSPX frontLeftDrive = new VictorSPX(2); 
+    public final VictorSPX backLeftDrive = new VictorSPX(3); 
+    public final VictorSPX backRightDrive = new VictorSPX(4); 
 
-    public final SpeedControllerGroup left = new SpeedControllerGroup(frontLeftDrive, backLeftDrive); 
-    public final SpeedControllerGroup right = new SpeedControllerGroup(frontRightDrive, backRightDrive); 
+    //public final SpeedControllerGroup left = new SpeedControllerGroup(frontLeftDrive, backLeftDrive); 
+    //public final SpeedControllerGroup right = new SpeedControllerGroup(frontRightDrive, backRightDrive); 
+    //public final GroupMotorControllers left = new GroupMotorControllers(frontLeftDrive, backLeftDrive);
 
-    public DifferentialDrive drive = new DifferentialDrive(left, right); 
+    //public DifferentialDrive drive = new DifferentialDrive(left, right); 
 
     public DriveTrain(){
         super(); 
     }
 
     public void periodic(){
-        drive.check();
+        
+        /*drive.check();
         if(!(drive.isSafetyEnabled())){
             drive.setSafetyEnabled(true);
         }
+        /
         /**
          * System.out.println(RobotContainer.stickMain.getLeftJoyY());
          * System.out.println(RobotContainer.stickMain.getRightJoyY()); 
@@ -41,12 +47,15 @@ public class DriveTrain extends SubsystemBase{
          * if(leftSpeed<5 && leftSpeed>-5){leftSpeed = 0;}
         if(rightSpeed<5 && rightSpeed>-5){rightSpeed = 0;}
          */
-            drive.tankDrive(leftSpeed, rightSpeed);
+            frontRightDrive.set(ControlMode.PercentOutput, rightSpeed);
+            frontLeftDrive.set(ControlMode.PercentOutput, leftSpeed);
+            backLeftDrive.set(ControlMode.PercentOutput, leftSpeed);
+            backRightDrive.set(ControlMode.PercentOutput, rightSpeed);
 
     }
 
     public void setSpeed(double speed){
-        drive.setMaxOutput(speed); 
+        //frontRightDrive.max
     }
 
 }

@@ -1,10 +1,12 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Talon;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Lift extends SubsystemBase{
-    public final Talon liftMotor = new Talon(6);
+    public final TalonSRX liftMotor = new TalonSRX(6);
 
     public Lift(){
         super();
@@ -13,6 +15,6 @@ public class Lift extends SubsystemBase{
         
     }
     public void wiggleLift(double speed){
-        liftMotor.set(speed);
+        liftMotor.set(ControlMode.PercentOutput, speed);
     }
 }

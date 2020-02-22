@@ -1,11 +1,11 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Talon;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Arm extends SubsystemBase{
-    public final Spark armMotor = new Spark(5);
+    public final Talon armMotor = new Talon(5);
 
     public Arm(){
         super();

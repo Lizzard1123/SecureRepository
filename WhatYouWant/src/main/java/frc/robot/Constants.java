@@ -26,5 +26,20 @@ public final class Constants {
     public static double upSpeed;
     public static double downSpeed;
     public static double autoDriveSpeed;
+
+    /**
+     * Motor Numbers
+     VictorSP
+     * 1 - frontRightDrive
+     * 2 - frontLeftDrive
+     * 3 - backLeftDrive
+     * 4 - backRightDrive
+     Talon
+     * 5 - armMotor
+     * 6 - liftMotor
+     Spark
+     * 7 - intakeMotor
+     * 8 - lazySusanMotor
+     */
   
 }

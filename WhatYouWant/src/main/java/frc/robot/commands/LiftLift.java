@@ -14,16 +14,16 @@ public class LiftLift extends CommandBase{
 
     }
     public void execute(){
-        goinUp = SmartDashboard.getNumber("Up Speed", 30);
-        RobotContainer.lift.wiggleLift(goinUp);
+        goinUp = SmartDashboard.getNumber("Lift Lift Speed", 0);
+        RobotContainer.lift.wiggleLift(goinUp*-1);
     }
     public boolean isFinished(){
-        return false;
+        return true;
     }
     protected void end(){
-
+        RobotContainer.lift.wiggleLift(0);
     }
     protected void interrupted(){
-        
+        RobotContainer.lift.wiggleLift(0);  
     }
 }

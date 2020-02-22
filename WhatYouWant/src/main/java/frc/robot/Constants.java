@@ -21,11 +21,11 @@ public final class Constants {
     public static double turtle; //= (RobotContainer.stickMain.getLeftTrigger());
     public static double rabbit;//= (RobotContainer.stickMain.getRightTrigger());
     public static double lazySusanSpeed;
-    public static double armSpeed = 40;
+    public static double armSpeed;
     public static double intakeSpeed = 70;
     public static double upSpeed = 30;
     public static double downSpeed;
-    public static double autoDriveSpeed;
+    public static double autoDriveSpeed = 40;
     public static double autoArmSpeed;
     
     /**

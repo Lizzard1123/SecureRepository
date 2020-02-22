@@ -17,6 +17,6 @@ public class Arm extends SubsystemBase{
            
     }
     public void moveArm(double speed){
-        armMotor.set(ControlMode.PercentOutput, speed);
+        armMotor.set(ControlMode.PercentOutput, speed/100);
     }
 }

@@ -15,6 +15,6 @@ public class Lift extends SubsystemBase{
         
     }
     public void wiggleLift(double speed){
-        liftMotor.set(ControlMode.PercentOutput, speed);
+        liftMotor.set(ControlMode.PercentOutput, speed/100);
     }
 }

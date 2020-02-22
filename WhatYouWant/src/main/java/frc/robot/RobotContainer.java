@@ -28,7 +28,8 @@ import frc.robot.commands.LowerLift;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.TakeBall; 
 import frc.robot.commands.ShootBall;
-
+import frc.robot.commands.StopArm;
+import frc.robot.commands.StopLift;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -56,13 +57,14 @@ public class RobotContainer {
   public RobotContainer() {
     differential.setDefaultCommand(new DriveTele(differential)); 
 
-    SmartDashboard.putNumber("Arm Speed", Constants.armSpeed);
+    SmartDashboard.putNumber("Lift Arm Speed", Constants.armSpeed);
+    SmartDashboard.putNumber("Lower Arm Speed", Constants.armSpeed);
     SmartDashboard.putNumber("Turtle", Constants.turtle);
     SmartDashboard.putNumber("Rabbit", Constants.rabbit);
     SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
     SmartDashboard.putNumber("Intake Speed", Constants.intakeSpeed);
-    SmartDashboard.putNumber("Up Speed", Constants.upSpeed);
-    SmartDashboard.putNumber("Down Speed", Constants.downSpeed);
+    SmartDashboard.putNumber("Lift Lift Speed", Constants.upSpeed);
+    SmartDashboard.putNumber("Lower Lift Speed", Constants.downSpeed);
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
     // Configure the button bindings
@@ -84,15 +86,25 @@ public class RobotContainer {
     JoystickButton shootBall = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
     JoystickButton liftElevator = new JoystickButton(stickMain, XBox.LB_BUTTON);
     JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.RB_BUTTON);
+    
+    JoystickButton stopArm1 = new JoystickButton(stickSecondary, XBox.LB_BUTTON);
+    JoystickButton stopArm2 = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
+    JoystickButton stopLift1 = new JoystickButton(stickMain, XBox.LB_BUTTON);
+    JoystickButton stopLift2 = new JoystickButton(stickMain, XBox.RB_BUTTON);
 
-     susanClockwise.whenHeld(new SpinClockwise(susan));
-     susanCounterClockwise.whenHeld(new SpinCounterClockwise(susan));
-     liftArm.whenHeld(new LiftArm(arm));
-     lowerArm.whenHeld(new LowerArm(arm));
-     liftElevator.whenHeld(new LiftLift(lift));
-     lowerElevator.whenHeld(new LowerLift(lift));
+     susanClockwise.whileHeld(new SpinClockwise(susan));
+     susanCounterClockwise.whileHeld(new SpinCounterClockwise(susan));
+     liftArm.whileHeld(new LiftArm(arm));
+     lowerArm.whileHeld(new LowerArm(arm));
+     liftElevator.whileHeld(new LiftLift(lift));
+     lowerElevator.whileHeld(new LowerLift(lift));
      takeBall.whenHeld(new TakeBall(take));
      shootBall.whenHeld(new ShootBall(take));
+     
+     stopArm1.whenReleased(new StopArm(arm));
+     stopArm2.whenReleased(new StopArm(arm));
+     stopLift1.whenReleased(new StopLift(lift));
+     stopLift2.whenReleased(new StopLift(lift));
 
     
      

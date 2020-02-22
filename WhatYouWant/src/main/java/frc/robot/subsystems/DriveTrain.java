@@ -2,11 +2,6 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.motorcontrol.*;
-import com.ctre.phoenix.motorcontrol.GroupMotorControllers;
-import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
-
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase{
@@ -48,8 +43,8 @@ public class DriveTrain extends SubsystemBase{
         if(rightSpeed<5 && rightSpeed>-5){rightSpeed = 0;}
          */
             frontRightDrive.set(ControlMode.PercentOutput, rightSpeed);
-            frontLeftDrive.set(ControlMode.PercentOutput, leftSpeed);
-            backLeftDrive.set(ControlMode.PercentOutput, leftSpeed);
+            frontLeftDrive.set(ControlMode.PercentOutput, leftSpeed*-1);
+            backLeftDrive.set(ControlMode.PercentOutput, leftSpeed*-1);
             backRightDrive.set(ControlMode.PercentOutput, rightSpeed);
 
     }

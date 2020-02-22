@@ -11,18 +11,22 @@ public class LiftArm extends CommandBase{
         addRequirements(arm);
     }
     public void initialize(){
+        armBoi = SmartDashboard.getNumber("Lift Arm Speed", 0);
     }
     public void execute(){
-        armBoi = SmartDashboard.getNumber("ArmSpeed", 50);
-        RobotContainer.arm.moveArm(armBoi*-1);
+        
+        RobotContainer.arm.moveArm(armBoi);
     }
     public boolean isFinished(){
-        return false;
+        return true;
+    }
+    public boolean isCanceled(){
+        return true;
     }
     protected void end(){
-
+        RobotContainer.arm.moveArm(0);
     }
     protected void interrupted(){
-        
+        RobotContainer.arm.moveArm(0);
     }
 }

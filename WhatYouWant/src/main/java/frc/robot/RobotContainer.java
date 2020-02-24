@@ -29,6 +29,7 @@ import frc.robot.subsystems.Intake;
 import frc.robot.commands.TakeBall; 
 import frc.robot.commands.ShootBall;
 import frc.robot.commands.StopArm;
+import frc.robot.commands.StopIntake;
 import frc.robot.commands.StopLift;
 
 /**
@@ -63,6 +64,7 @@ public class RobotContainer {
     SmartDashboard.putNumber("Rabbit", Constants.rabbit);
     SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
     SmartDashboard.putNumber("Intake Speed", Constants.intakeSpeed);
+    SmartDashboard.putNumber("Eject Speed", Constants.intakeSpeed);
     SmartDashboard.putNumber("Lift Lift Speed", Constants.upSpeed);
     SmartDashboard.putNumber("Lower Lift Speed", Constants.downSpeed);
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
@@ -78,17 +80,21 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton susanClockwise = new JoystickButton(stickSecondary, XBox.X_BUTTON);
-    JoystickButton susanCounterClockwise = new JoystickButton(stickSecondary, XBox.B_BUTTON);
     JoystickButton liftArm = new JoystickButton(stickSecondary, XBox.LB_BUTTON);
     JoystickButton lowerArm = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
     JoystickButton takeBall = new JoystickButton(stickSecondary, XBox.B_BUTTON);
     JoystickButton shootBall = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
+    
     JoystickButton liftElevator = new JoystickButton(stickMain, XBox.LB_BUTTON);
     JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.RB_BUTTON);
-    
+    JoystickButton susanClockwise = new JoystickButton(stickMain, XBox.A_BUTTON);
+    JoystickButton susanCounterClockwise = new JoystickButton(stickMain, XBox.B_BUTTON);
+
     JoystickButton stopArm1 = new JoystickButton(stickSecondary, XBox.LB_BUTTON);
     JoystickButton stopArm2 = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
+    JoystickButton stopIntake1 = new JoystickButton(stickSecondary, XBox.B_BUTTON);
+    JoystickButton stopIntake2 = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
+    
     JoystickButton stopLift1 = new JoystickButton(stickMain, XBox.LB_BUTTON);
     JoystickButton stopLift2 = new JoystickButton(stickMain, XBox.RB_BUTTON);
 
@@ -105,6 +111,8 @@ public class RobotContainer {
      stopArm2.whenReleased(new StopArm(arm));
      stopLift1.whenReleased(new StopLift(lift));
      stopLift2.whenReleased(new StopLift(lift));
+     stopIntake1.whenReleased(new StopIntake(take));
+     stopIntake2.whenReleased(new StopIntake(take));
 
     
      

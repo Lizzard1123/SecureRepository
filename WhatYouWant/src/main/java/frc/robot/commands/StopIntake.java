@@ -1,21 +1,18 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
 import frc.robot.RobotContainer;
 
-public class TakeBall extends CommandBase{
-    private double myBall;
-    public TakeBall(Intake take){
+public class StopIntake extends CommandBase{
+    public StopIntake(Intake take){
         addRequirements(take);
     }
     public void initialize(){
 
     }
     public void execute(){
-        myBall = SmartDashboard.getNumber("Intake Speed", 50);
-        RobotContainer.take.yellowBoi(myBall);
+        RobotContainer.take.yellowBoi(0);
     }
     public boolean isFinished(){
         return false;
@@ -24,6 +21,6 @@ public class TakeBall extends CommandBase{
         RobotContainer.take.yellowBoi(0);
     }
     protected void interrupted(){
-        RobotContainer.take.yellowBoi(0);   
+        RobotContainer.take.yellowBoi(0);
     }
 }

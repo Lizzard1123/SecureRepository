@@ -14,16 +14,16 @@ public class ShootBall extends CommandBase{
 
     }
     public void execute(){
-        shootinTootin = SmartDashboard.getNumber("Intake Speed", 50);
+        shootinTootin = SmartDashboard.getNumber("Eject Speed", 50);
         RobotContainer.take.yellowBoi(shootinTootin*-1);
     }
     public boolean isFinished(){
         return false;
     }
     protected void end(){
-
+        RobotContainer.take.yellowBoi(0);
     }
     protected void interrupted(){
-        
+        RobotContainer.take.yellowBoi(0);
     }
 }

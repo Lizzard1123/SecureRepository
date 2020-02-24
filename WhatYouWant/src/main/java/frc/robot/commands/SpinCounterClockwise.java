@@ -21,9 +21,9 @@ public class SpinCounterClockwise extends CommandBase{
         return false;
     }
     protected void end(){
-
+        RobotContainer.susan.spinSusan(0);
     }
     protected void interrupted(){
-        
+        RobotContainer.susan.spinSusan(0);
     }
 }

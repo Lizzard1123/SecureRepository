@@ -20,11 +20,11 @@ public final class Constants {
     public static double speedDivisor = 2;
     public static double turtle; //= (RobotContainer.stickMain.getLeftTrigger());
     public static double rabbit;//= (RobotContainer.stickMain.getRightTrigger());
-    public static double lazySusanSpeed;
-    public static double armSpeed;
+    public static double lazySusanSpeed = 30;
+    public static double armSpeed = 20;
     public static double intakeSpeed = 70;
-    public static double upSpeed = 30;
-    public static double downSpeed;
+    public static double upSpeed = 100;
+    public static double downSpeed = 100;
     public static double autoDriveSpeed = 40;
     public static double autoArmSpeed;
     

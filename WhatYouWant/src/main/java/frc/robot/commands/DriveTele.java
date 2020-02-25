@@ -17,7 +17,7 @@ public class DriveTele extends CommandBase{
         
     }
     public void execute(){
-        RobotContainer.differential.setSpeed(maxDrive/100);
+        RobotContainer.differential.setSpeed(maxDrive);
         RobotContainer.differential.differentialDrive(RobotContainer.stickMain.getLeftJoyY(), RobotContainer.stickMain.getRightJoyY());
     }
     public boolean isFinished(){

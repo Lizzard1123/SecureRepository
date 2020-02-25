@@ -51,6 +51,10 @@ public class DriveTrain extends SubsystemBase{
 
     public void setSpeed(double speed){
         //frontRightDrive.max
+        frontRightDrive.configPeakOutputForward(speed/100);
+        frontLeftDrive.configPeakOutputForward(speed/100);
+        backLeftDrive.configPeakOutputForward(speed/100);
+        backRightDrive.configPeakOutputForward(speed/100);
     }
 
 }

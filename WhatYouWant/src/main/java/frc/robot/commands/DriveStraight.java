@@ -16,8 +16,8 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         //smartBoi.reset();
     }
     public void execute(){
-        thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50);
-        RobotContainer.differential.differentialDrive(thinking, thinking);
+        thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
+        RobotContainer.differential.differentialDrive(thinking*-1, thinking*-1);
     }
     public boolean isFinished(){
         return false;

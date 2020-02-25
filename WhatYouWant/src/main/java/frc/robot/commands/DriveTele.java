@@ -11,12 +11,11 @@ public class DriveTele extends CommandBase{
         addRequirements(driveTrain);
 
     }
-    public void initialize(){
-        maxDrive = SmartDashboard.getNumber("Max Drive Speed", 100);
-        
+    public void initialize(){        
         
     }
     public void execute(){
+        maxDrive = SmartDashboard.getNumber("Max Drive Speed", 100);
         RobotContainer.differential.setSpeed(maxDrive);
         RobotContainer.differential.differentialDrive(RobotContainer.stickMain.getLeftJoyY(), RobotContainer.stickMain.getRightJoyY());
     }

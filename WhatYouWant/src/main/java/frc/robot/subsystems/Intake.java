@@ -13,6 +13,6 @@ public class Intake extends SubsystemBase{
         
     }
     public void yellowBoi(double speed){
-        intakeMotor.set(speed);
+        intakeMotor.set(speed/100);
     }
 }

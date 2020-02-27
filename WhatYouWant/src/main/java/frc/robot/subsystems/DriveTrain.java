@@ -3,7 +3,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.motorcontrol.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
+import frc.robot.RobotContainer;
 public class DriveTrain extends SubsystemBase{
     public final VictorSPX frontRightDrive = new VictorSPX(1); 
     public final VictorSPX frontLeftDrive = new VictorSPX(2); 
@@ -50,11 +50,26 @@ public class DriveTrain extends SubsystemBase{
     }
 
     public void setSpeed(double speed){
-        //frontRightDrive.max
-        frontRightDrive.configPeakOutputForward(speed/100);
-        frontLeftDrive.configPeakOutputForward(speed/100);
-        backLeftDrive.configPeakOutputForward(speed/100);
-        backRightDrive.configPeakOutputForward(speed/100);
+        //forward???
+        if(RobotContainer.stickMain.getRightJoyY()<0){
+            frontRightDrive.configPeakOutputReverse(speed*-1/100);
+            backRightDrive.configPeakOutputReverse(speed*-1/100);  
+        }
+        if(RobotContainer.stickMain.getLeftJoyY()<0){
+            frontLeftDrive.configPeakOutputForward(speed/100);
+            backLeftDrive.configPeakOutputForward(speed/100);
+        }
+        //backward???
+        if(RobotContainer.stickMain.getRightJoyY()>0){
+            frontRightDrive.configPeakOutputForward(speed/100);
+            backRightDrive.configPeakOutputForward(speed/100);
+        }
+         if(RobotContainer.stickMain.getLeftJoyY()>0){
+            frontLeftDrive.configPeakOutputReverse(speed*-1/100);
+            backLeftDrive.configPeakOutputReverse(speed*-1/100);
+        }
+        
+
     }
 
 }

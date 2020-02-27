@@ -84,11 +84,13 @@ public class RobotContainer {
     JoystickButton lowerArm = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
     JoystickButton takeBall = new JoystickButton(stickSecondary, XBox.B_BUTTON);
     JoystickButton shootBall = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
+    JoystickButton susanClockwise = new JoystickButton(stickSecondary, XBox.A_BUTTON);
+    JoystickButton susanCounterClockwise = new JoystickButton(stickSecondary, XBox.X_BUTTON);
     
-    JoystickButton liftElevator = new JoystickButton(stickMain, XBox.LB_BUTTON);
-    JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.RB_BUTTON);
-    JoystickButton susanClockwise = new JoystickButton(stickMain, XBox.A_BUTTON);
-    JoystickButton susanCounterClockwise = new JoystickButton(stickMain, XBox.B_BUTTON);
+    JoystickButton liftElevator = new JoystickButton(stickMain, XBox.A_BUTTON);
+    JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.X_BUTTON);
+    JoystickButton turtle = new JoystickButton(stickMain, XBox.LB_BUTTON);
+    JoystickButton rabbit = new JoystickButton(stickMain, XBox.RB_BUTTON);
 
     JoystickButton stopArm1 = new JoystickButton(stickSecondary, XBox.LB_BUTTON);
     JoystickButton stopArm2 = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
@@ -97,6 +99,8 @@ public class RobotContainer {
     
     JoystickButton stopLift1 = new JoystickButton(stickMain, XBox.LB_BUTTON);
     JoystickButton stopLift2 = new JoystickButton(stickMain, XBox.RB_BUTTON);
+    JoystickButton stopTurtle =  new JoystickButton(stickMain, XBox.LB_BUTTON);
+    JoystickButton stopRabbit = new JoystickButton(stickMain, XBox.RB_BUTTON);
 
      susanClockwise.whileHeld(new SpinClockwise(susan));
      susanCounterClockwise.whileHeld(new SpinCounterClockwise(susan));

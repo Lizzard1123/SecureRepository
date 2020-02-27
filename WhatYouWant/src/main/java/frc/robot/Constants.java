@@ -16,10 +16,10 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static double maxSpeed = 90;
+    public static double maxSpeed = 70;
     public static double speedDivisor = 2;
-    public static double turtle; //= (RobotContainer.stickMain.getLeftTrigger());
-    public static double rabbit;//= (RobotContainer.stickMain.getRightTrigger());
+    public static double turtle = 40; //= (RobotContainer.stickMain.getLeftTrigger());
+    public static double rabbit = 100;//= (RobotContainer.stickMain.getRightTrigger());
     public static double lazySusanSpeed = 30;
     public static double armSpeed = 20;
     public static double intakeSpeed = 70;

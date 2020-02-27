@@ -56,8 +56,8 @@ public class DriveTrain extends SubsystemBase{
             backRightDrive.configPeakOutputReverse(speed*-1/100);  
         }
         if(RobotContainer.stickMain.getLeftJoyY()<0){
-            frontLeftDrive.configPeakOutputForward(speed/100);
-            backLeftDrive.configPeakOutputForward(speed/100);
+            frontLeftDrive.configPeakOutputForward(speed*.975/100);
+            backLeftDrive.configPeakOutputForward(speed*.975/100);
         }
         //backward???
         if(RobotContainer.stickMain.getRightJoyY()>0){
@@ -65,8 +65,8 @@ public class DriveTrain extends SubsystemBase{
             backRightDrive.configPeakOutputForward(speed/100);
         }
          if(RobotContainer.stickMain.getLeftJoyY()>0){
-            frontLeftDrive.configPeakOutputReverse(speed*-1/100);
-            backLeftDrive.configPeakOutputReverse(speed*-1/100);
+            frontLeftDrive.configPeakOutputReverse(speed*-1*.975/100);
+            backLeftDrive.configPeakOutputReverse(speed*-1*.975/100);
         }
         
 

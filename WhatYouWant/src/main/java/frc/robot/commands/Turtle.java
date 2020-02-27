@@ -1,21 +1,20 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.DriveTrain;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 
-public class LiftArm extends CommandBase{
-    private double armBoi;
-    public LiftArm(Arm arm){
-        addRequirements(arm);
+public class Turtle extends CommandBase{
+    public static boolean slowBoi;
+    public Turtle(DriveTrain drive){
+        addRequirements(drive);
     }
     public void initialize(){
-        
+
     }
     public void execute(){
-        armBoi = SmartDashboard.getNumber("Lift Arm Speed", 0);
-        RobotContainer.arm.moveArm(armBoi);
+        slowBoi = true;
     }
     public boolean isFinished(){
         return true;
@@ -24,9 +23,9 @@ public class LiftArm extends CommandBase{
         return true;
     }
     protected void end(){
-        RobotContainer.arm.moveArm(0);
+        slowBoi = false;
     }
     protected void interrupted(){
-        RobotContainer.arm.moveArm(0);
+        slowBoi = false;
     }
 }

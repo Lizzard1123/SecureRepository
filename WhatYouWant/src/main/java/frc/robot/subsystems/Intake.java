@@ -1,10 +1,11 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Spark;
+import com.ctre.phoenix.motorcontrol.can.*;
+import com.ctre.phoenix.motorcontrol.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Intake extends SubsystemBase{
-    public final Spark intakeMotor = new Spark(7);
+    public final VictorSPX intakeMotor = new VictorSPX(7);
 
     public Intake(){
         super();
@@ -13,6 +14,6 @@ public class Intake extends SubsystemBase{
         
     }
     public void yellowBoi(double speed){
-        intakeMotor.set(speed/100);
+        intakeMotor.set(ControlMode.PercentOutput, speed/100);
     }
 }

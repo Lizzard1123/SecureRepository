@@ -19,7 +19,7 @@ public class DriveTele extends CommandBase{
         if(RobotContainer.stickMain.getButtonLB()){
             maxDrive = SmartDashboard.getNumber("Turtle", Constants.turtle);
         }
-        if(RobotContainer.stickMain.getButtonRB()){
+        else if(RobotContainer.stickMain.getButtonRB()){
             maxDrive = SmartDashboard.getNumber("Rabbit", Constants.rabbit);
         }
         else{

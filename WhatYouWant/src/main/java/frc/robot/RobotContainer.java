@@ -69,6 +69,7 @@ public class RobotContainer {
     SmartDashboard.putNumber("Lower Lift Speed", Constants.downSpeed);
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
+    SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -95,8 +96,8 @@ public class RobotContainer {
     JoystickButton stopIntake1 = new JoystickButton(stickSecondary, XBox.B_BUTTON);
     JoystickButton stopIntake2 = new JoystickButton(stickSecondary, XBox.Y_BUTTON);
     
-    JoystickButton stopLift1 = new JoystickButton(stickMain, XBox.LB_BUTTON);
-    JoystickButton stopLift2 = new JoystickButton(stickMain, XBox.RB_BUTTON);
+    JoystickButton stopLift1 = new JoystickButton(stickMain, XBox.A_BUTTON);
+    JoystickButton stopLift2 = new JoystickButton(stickMain, XBox.X_BUTTON);
   
      susanClockwise.whileHeld(new SpinClockwise(susan));
      susanCounterClockwise.whileHeld(new SpinCounterClockwise(susan));

@@ -10,8 +10,8 @@ public class Autonomous extends SequentialCommandGroup{
     public Autonomous(DriveTrain drive, Arm arm){
         addCommands(
             parallel( 
-                new DriveStraight(20, drive), 
-                new LowerArm(arm)
+                new DriveStraight(20, drive)//, 
+                //new LowerArm(arm)
             )
             
         );

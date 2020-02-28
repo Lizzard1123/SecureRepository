@@ -12,7 +12,8 @@ public class Autonomous extends SequentialCommandGroup{
             parallel( 
                 new DriveStraight(20, drive)//, 
                 //new LowerArm(arm)
-            )
+            ),
+            new StopDrive(drive)
             
         );
         

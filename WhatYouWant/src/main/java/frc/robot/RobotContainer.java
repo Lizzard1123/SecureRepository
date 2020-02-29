@@ -9,6 +9,7 @@ package frc.robot;
 
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -48,6 +49,7 @@ public class RobotContainer {
   public static Lift lift = new Lift();
   public static Intake take = new Intake();
   public static Autonomous m_autoCommand = new Autonomous(differential, arm);
+  public static AnalogGyro gyro = new AnalogGyro(0); //double check port #
   //public static NetworkTable table = Robot.getTable();
 
 

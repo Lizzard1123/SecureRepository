@@ -27,6 +27,7 @@ public final class Constants {
     public static double downSpeed = 100;
     public static double autoDriveSpeed = 40;
     public static double autoArmSpeed;
+    
     public static double timer1 = 5;
     
     /**

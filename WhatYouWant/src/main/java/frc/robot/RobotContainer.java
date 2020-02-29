@@ -69,7 +69,7 @@ public class RobotContainer {
     SmartDashboard.putNumber("Lower Lift Speed", Constants.downSpeed);
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
-    //SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
+    SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
     // Configure the button bindings
     configureButtonBindings();
   }

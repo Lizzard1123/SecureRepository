@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class DriveStraight extends CommandBase{//extends PIDCommand{
     private double thinking;
     private double endTime;
+    private final Timer time = new Timer();
     //private Timer time = new Timer();
     public DriveStraight(double distance, DriveTrain smartBoi){
         addRequirements(smartBoi);
@@ -20,13 +21,13 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         endTime = Constants.timer1;
     }
     public void execute(){
-        
+        endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
         RobotContainer.differential.differentialDrive(thinking*-1, thinking*-1);
         
     }
     public boolean isFinished(){
-        return System.currentTimeMillis() >= endTime*1000;
+        return time.get() > endTime;
     }
     protected void end(){
         RobotContainer.differential.differentialDrive(0,0);

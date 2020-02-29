@@ -1,7 +1,11 @@
-package frc.robot.subsystems; 
+package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.motorcontrol.*;
+
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 public class DriveTrain extends SubsystemBase{
@@ -47,6 +51,22 @@ public class DriveTrain extends SubsystemBase{
             backLeftDrive.set(ControlMode.PercentOutput, leftSpeed*-1);
             backRightDrive.set(ControlMode.PercentOutput, rightSpeed);
 
+    }
+
+    public void limelightMode(boolean on){
+        NetworkTableInstance.getDefault().startClientTeam(3344);
+        NetworkTableInstance.getDefault().startDSClient();
+        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+        NetworkTableEntry camMode = table.getEntry("camMode");
+        NetworkTableEntry ledMode = table.getEntry("ledMode");
+        if(on){
+            camMode.setDouble(0);
+            ledMode.setDouble(3);
+
+        }   else{
+            camMode.setDouble(1);
+            ledMode.setDouble(1);
+        }
     }
 
     public void setSpeed(double speed){

@@ -56,7 +56,8 @@ public class RobotContainer {
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
-    differential.setDefaultCommand(new DriveTele(differential)); 
+    differential.setDefaultCommand(new DriveTele(differential));
+    differential.limelightMode(true); //true == vision processing; false == ONLY camera 
 
     SmartDashboard.putNumber("Lift Arm Speed", Constants.armSpeed);
     SmartDashboard.putNumber("Lower Arm Speed", Constants.armSpeed);
@@ -72,6 +73,8 @@ public class RobotContainer {
     SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
     // Configure the button bindings
     configureButtonBindings();
+
+
   }
 
   /**

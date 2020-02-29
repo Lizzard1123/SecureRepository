@@ -25,7 +25,7 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
     public void execute(){
         endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
-        RobotContainer.differential.differentialDrive(thinking*-1, thinking*-1);
+        RobotContainer.differential.differentialDrive(thinking*-1, 0.016 + thinking*-1);
         
     }
     public boolean isFinished(){

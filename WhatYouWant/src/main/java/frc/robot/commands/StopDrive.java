@@ -15,7 +15,7 @@ public class StopDrive extends CommandBase{
         RobotContainer.differential.differentialDrive(0, 0);
     }
     public boolean isFinished(){
-        return true;
+        return false;
     }
     protected void end(){
         RobotContainer.differential.differentialDrive(0, 0);

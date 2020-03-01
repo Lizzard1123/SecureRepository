@@ -19,6 +19,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.LazySusan;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Limelight;
 import frc.robot.commands.DriveTele;
 import frc.robot.commands.SpinCounterClockwise;
 import frc.robot.commands.SpinClockwise;
@@ -50,6 +51,7 @@ public class RobotContainer {
   public static Intake take = new Intake();
   public static Autonomous m_autoCommand = new Autonomous(differential, arm, take);
   public static AnalogGyro gyro = new AnalogGyro(0); //double check port #
+  public static Limelight lime = new Limelight();
   //public static NetworkTable table = Robot.getTable();
 
 
@@ -59,7 +61,7 @@ public class RobotContainer {
    */
   public RobotContainer() {
     differential.setDefaultCommand(new DriveTele(differential));
-    differential.limelightMode(true); //true == vision processing; false == ONLY camera 
+    
 
     SmartDashboard.putNumber("Lift Arm Speed", Constants.armSpeed);
     SmartDashboard.putNumber("Lower Arm Speed", Constants.armSpeed);
@@ -74,6 +76,7 @@ public class RobotContainer {
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
     SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
     SmartDashboard.putNumber("Autonomous Timer 2", Constants.timer2);
+    SmartDashboard.putString("Vision Processing", "on");
     // Configure the button bindings
     configureButtonBindings();
 

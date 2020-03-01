@@ -18,17 +18,17 @@ public class AutoLowerArm extends CommandBase{
     public void initialize(){
         time.reset();
         time.start();
-        startTime  = time.get();
+        startTime  = time.get()+1;
         endTime = Constants.timer1; 
     }
     public void execute(){
         endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         armBoi = SmartDashboard.getNumber("Lift Arm Speed", 0);
-        RobotContainer.arm.moveArm(armBoi);
+        RobotContainer.arm.moveArm(armBoi*-1);
         isFinished();
     }
     public boolean isFinished(){
-        return time.get()-startTime > endTime;
+        return time.get()-startTime > endTime-1;
     }
     protected void end(){
         RobotContainer.arm.moveArm(0);

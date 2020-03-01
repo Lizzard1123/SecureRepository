@@ -14,8 +14,10 @@ public class DriveTele extends CommandBase{
     }
     public void initialize(){        
         maxDrive = SmartDashboard.getNumber("Max Drive Speed", 100);
+        
     }
     public void execute(){
+       
         if(RobotContainer.stickMain.getButtonLB()){
             maxDrive = SmartDashboard.getNumber("Turtle", Constants.turtle);
         }

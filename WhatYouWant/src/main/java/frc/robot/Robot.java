@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    RobotContainer.gyro.reset();
   }
 
   /**
@@ -44,12 +46,25 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    SmartDashboard.putNumber("Gyro Angle", RobotContainer.gyro.getAngle());
+    /**
+     * 
+    if(SmartDashboard.getString("Vision Processing", "on").equals("on")){
+      Constants.limeMode = true;
+    }
+    else{
+      Constants.limeMode = false;
+    }
+     */
+    //RobotContainer.differential.limelightMode(Constants.limeMode); //true == vision processing; false == ONLY camera 
+
     
     // Runs the Scheduler.  This is responsible for polling buttons, adding newly-scheduled
     // commands, running already-scheduled commands, removing finished or interrupted commands,
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+
   }
 
   /**

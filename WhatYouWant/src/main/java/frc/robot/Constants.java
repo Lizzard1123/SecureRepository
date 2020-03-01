@@ -21,7 +21,7 @@ public final class Constants {
     public static double turtle = 40; //= (RobotContainer.stickMain.getLeftTrigger());
     public static double rabbit = 100;//= (RobotContainer.stickMain.getRightTrigger());
     public static double lazySusanSpeed = 30;
-    public static double armSpeed = 20;
+    public static double armSpeed = 30;
     public static double intakeSpeed = 70;
     public static double upSpeed = 100;
     public static double downSpeed = 100;
@@ -30,6 +30,8 @@ public final class Constants {
     
     public static double timer1 = 5;
     public static double timer2 = 1.65;
+
+    public static boolean limeMode = true;
     
     /**
      * Motor Numbers

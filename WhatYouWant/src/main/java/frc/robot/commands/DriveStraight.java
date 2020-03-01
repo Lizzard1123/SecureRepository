@@ -19,23 +19,23 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         addRequirements(smartBoi);
     }
     public void initialize(){
+        //current timer value is unknown, so the timer must be reset and started at each command
         time.reset();
         time.start();
         startTime  = time.get();
         endTime = Constants.timer1;
     }
     public void execute(){
+        //gets the endTime and thinking variables from the SmartDashboard
         endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
         RobotContainer.differential.differentialDrive(0.02 + thinking*-1, thinking*-1);
-        /**
-         * if(time.get()-startTime > endTime){
-            return;
-        }
-         */
+       
+        //might delete this
         isFinished();
         
     }
+    //if this returns true, calls end() function
     @Override
     public boolean isFinished(){
         return time.get()-startTime > endTime;

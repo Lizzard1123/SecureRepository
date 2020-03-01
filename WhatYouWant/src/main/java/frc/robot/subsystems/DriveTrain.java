@@ -67,6 +67,14 @@ public class DriveTrain extends SubsystemBase{
             camMode.setDouble(1);
             ledMode.setDouble(1);
         }
+        /**
+         * camMode(0) = visionProcessing
+         * camMode(1) = normal camera
+         * ledMode(0) = LED mode set in current pipeline
+         * ledMode(1) = force LED off
+         * ledMode(2) = force blink
+         * ledMode(3) = force on
+         */
     }
 
     public void setSpeed(double speed){
@@ -76,8 +84,8 @@ public class DriveTrain extends SubsystemBase{
             backRightDrive.configPeakOutputReverse(speed*-1/100);  
         }
         if(RobotContainer.stickMain.getLeftJoyY()<0){
-            frontLeftDrive.configPeakOutputForward(speed*.975/100);
-            backLeftDrive.configPeakOutputForward(speed*.975/100);
+            frontLeftDrive.configPeakOutputForward(speed/100);
+            backLeftDrive.configPeakOutputForward(speed/100);
         }
         //backward???
         if(RobotContainer.stickMain.getRightJoyY()>0){

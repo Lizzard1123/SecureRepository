@@ -49,7 +49,7 @@ public class RobotContainer {
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();
   public static Intake take = new Intake();
-  public static Autonomous m_autoCommand = new Autonomous(differential, arm, take);
+  public static Autonomous m_autoCommand = new Autonomous(differential, arm);
   public static AnalogGyro gyro = new AnalogGyro(0); //double check port #
   public static Limelight lime = new Limelight();
   //public static NetworkTable table = Robot.getTable();
@@ -75,8 +75,11 @@ public class RobotContainer {
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
     SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
+<<<<<<< HEAD
     SmartDashboard.putNumber("Autonomous Timer 2", Constants.timer2);
     SmartDashboard.putString("Vision Processing", "on");
+=======
+>>>>>>> parent of 5f0ef20... Comp Code
     // Configure the button bindings
     configureButtonBindings();
 

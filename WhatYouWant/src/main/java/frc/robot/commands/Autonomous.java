@@ -4,23 +4,16 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Arm;
-import frc.robot.subsystems.Intake; 
+import frc.robot.subsystems.Arm; 
 
 public class Autonomous extends SequentialCommandGroup{
-    public Autonomous(DriveTrain drive, Arm arm, Intake take){
+    public Autonomous(DriveTrain drive, Arm arm){
         addCommands(
             parallel( 
-                new DriveStraight(20, drive), 
-                new AutoLowerArm(arm),
-                new AutoTakeBall(take)
+                new DriveStraight(20, drive)//, 
+                //new LowerArm(arm)
             ),
-            new TurnRight(drive),
-            parallel(
-                new StopDrive(drive),
-                new StopArm(arm),
-                new StopIntake(take)
-            )
+            new StopDrive(drive)
             
         );
         

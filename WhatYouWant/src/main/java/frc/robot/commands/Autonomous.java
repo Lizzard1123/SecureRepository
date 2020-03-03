@@ -10,12 +10,14 @@ import frc.robot.subsystems.Limelight;
 public class Autonomous extends SequentialCommandGroup{
     public Autonomous(DriveTrain drive, Arm arm, Limelight lime, Intake take){
         addCommands(
-            parallel( 
+           new Seek(drive, lime)
+            /**
+             *  parallel( 
                 new DriveStraight(20, drive)//, 
                 //new LowerArm(arm)
             ),
             new StopDrive(drive)
-            
+             *  */            
         );
         
     }

@@ -55,7 +55,8 @@ public class Limelight extends SubsystemBase{
         float Kp = -0.1f;
         float min_command = 0.05f;
 
-        float tx = 0;
+        double txd = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+        float tx = (float)txd;
         float heading_error = -tx;
         if (tx > 1.0)
         {
@@ -65,5 +66,8 @@ public class Limelight extends SubsystemBase{
         {
                 steering_adjust = Kp*heading_error + min_command;
         }
+    }
+    public double getAimAdjust(){
+        return (double)steering_adjust;
     }
 }

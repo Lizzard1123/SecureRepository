@@ -1,0 +1,9 @@
+Unsure how to use this code:
+
+Initially placed in Robot -> robotPeriodic()
+    if(SmartDashboard.getString("Vision Processing", "on").equals("on")){
+      Constants.limeMode = true;
+    }
+    else{
+      Constants.limeMode = false;
+    }

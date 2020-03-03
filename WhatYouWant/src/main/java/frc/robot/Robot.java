@@ -47,17 +47,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     SmartDashboard.putNumber("Gyro Angle", RobotContainer.gyro.getAngle());
-    /**
-     * 
-    if(SmartDashboard.getString("Vision Processing", "on").equals("on")){
-      Constants.limeMode = true;
-    }
-    else{
-      Constants.limeMode = false;
-    }
-     */
-    //RobotContainer.differential.limelightMode(Constants.limeMode); //true == vision processing; false == ONLY camera 
-
+    
+    RobotContainer.lime.limelightMode(Constants.limeMode);  
     
     // Runs the Scheduler.  This is responsible for polling buttons, adding newly-scheduled
     // commands, running already-scheduled commands, removing finished or interrupted commands,
@@ -89,6 +80,7 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
+    Constants.limeMode = true;
   }
 
   /**
@@ -107,6 +99,7 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+    Constants.limeMode = false;
   }
 
   /**

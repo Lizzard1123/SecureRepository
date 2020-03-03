@@ -1,17 +1,13 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
-import java.lang.Math;
-//import frc.robot.lib.motion.Util;
-//import frc.robot.lib.obj.VisionTarget;
-//import frc.robot.lib.obj.factories.VisionTargetFactory;
 
 public class Limelight extends SubsystemBase{
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    public static float steering_adjust = 0.0f;
     private final double height1 = 0;
     private final double height2 = 0;
     private final double angle1 = 0;
@@ -30,5 +26,44 @@ public class Limelight extends SubsystemBase{
     public double distanceToObject(){
         return distance + distance;
     }
-    
+
+
+    public void limelightMode(boolean on){ //true == vision processing; false == ONLY camera
+        NetworkTableInstance.getDefault().startClientTeam(3344);
+        NetworkTableInstance.getDefault().startDSClient();
+        NetworkTableEntry camMode = table.getEntry("camMode");
+        NetworkTableEntry ledMode = table.getEntry("ledMode");
+        if(on){
+            camMode.setDouble(0);
+            ledMode.setDouble(3);
+
+        }   else{
+            camMode.setDouble(1);
+            ledMode.setDouble(1);
+        }
+        /**
+         * camMode(0) = visionProcessing
+         * camMode(1) = normal camera
+         * ledMode(0) = LED mode set in current pipeline
+         * ledMode(1) = force LED off
+         * ledMode(2) = force blink
+         * ledMode(3) = force on
+         */
+    }
+
+    public void aim(DriveTrain drive){
+        float Kp = -0.1f;
+        float min_command = 0.05f;
+
+        float tx = 0;
+        float heading_error = -tx;
+        if (tx > 1.0)
+        {
+                steering_adjust = Kp*heading_error - min_command;
+        }
+        else if (tx < 1.0)
+        {
+                steering_adjust = Kp*heading_error + min_command;
+        }
+    }
 }

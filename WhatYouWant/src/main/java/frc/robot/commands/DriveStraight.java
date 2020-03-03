@@ -19,12 +19,9 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         addRequirements(smartBoi);
     }
     public void initialize(){
-<<<<<<< HEAD
         //current timer value is unknown, so the timer must be reset and started at each command
         time.reset();
         time.start();
-=======
->>>>>>> parent of 5f0ef20... Comp Code
         startTime  = time.get();
         endTime = Constants.timer1;
     }
@@ -32,7 +29,6 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         //gets the endTime and thinking variables from the SmartDashboard
         endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
-<<<<<<< HEAD
         RobotContainer.differential.differentialDrive(0.02 + thinking*-1, thinking*-1);
        
         //might delete this
@@ -41,11 +37,6 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
     }
     //if this returns true, calls end() function
     @Override
-=======
-        RobotContainer.differential.differentialDrive(thinking*-1, 0.016 + thinking*-1);
-        
-    }
->>>>>>> parent of 5f0ef20... Comp Code
     public boolean isFinished(){
         return time.get()-startTime > endTime;
     }

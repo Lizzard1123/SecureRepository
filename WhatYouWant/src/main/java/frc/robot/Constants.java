@@ -29,12 +29,6 @@ public final class Constants {
     public static double autoArmSpeed;
     
     public static double timer1 = 5;
-<<<<<<< HEAD
-    public static double timer2 = 1.65;
-
-    public static boolean limeMode = true;
-=======
->>>>>>> parent of 5f0ef20... Comp Code
     
     /**
      * Motor Numbers

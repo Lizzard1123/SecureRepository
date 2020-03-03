@@ -75,11 +75,6 @@ public class RobotContainer {
     SmartDashboard.putNumber("Lazy Susan Speed", Constants.lazySusanSpeed);
     SmartDashboard.putNumber("Autonomous Drive Speed", Constants.autoDriveSpeed);
     SmartDashboard.putNumber("Autonomous Drive Straight Timer", Constants.timer1);
-<<<<<<< HEAD
-    SmartDashboard.putNumber("Autonomous Timer 2", Constants.timer2);
-    SmartDashboard.putString("Vision Processing", "on");
-=======
->>>>>>> parent of 5f0ef20... Comp Code
     // Configure the button bindings
     configureButtonBindings();
 

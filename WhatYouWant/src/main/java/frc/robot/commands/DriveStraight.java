@@ -5,7 +5,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.PIDCommand;
+//import edu.wpi.first.wpilibj2.command.PIDCommand;
 import edu.wpi.first.wpilibj.Timer;
 //import.edu.wpi.first.wpilibj.PIDController; 
 
@@ -29,7 +29,7 @@ public class DriveStraight extends CommandBase{//extends PIDCommand{
         //gets the endTime and thinking variables from the SmartDashboard
         endTime = SmartDashboard.getNumber("Autonomous Drive Straight Timer", Constants.timer1);
         thinking = SmartDashboard.getNumber("Autonomous Drive Speed", 50)/100;
-        RobotContainer.differential.differentialDrive(0.02 + thinking*-1, thinking*-1);
+        RobotContainer.differential.differentialDrive(thinking*-1, thinking*-1);
        
         //might delete this
         isFinished();

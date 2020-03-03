@@ -29,6 +29,9 @@ public final class Constants {
     public static double autoArmSpeed;
     
     public static double timer1 = 5;
+    public static double timer2 = 1.65;
+
+    public static boolean limeMode = true;
     
     /**
      * Motor Numbers

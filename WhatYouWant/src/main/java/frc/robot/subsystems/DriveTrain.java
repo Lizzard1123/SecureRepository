@@ -1,11 +1,8 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.*;
-import com.ctre.phoenix.motorcontrol.*;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 public class DriveTrain extends SubsystemBase{
@@ -53,29 +50,6 @@ public class DriveTrain extends SubsystemBase{
 
     }
 
-    public void limelightMode(boolean on){
-        NetworkTableInstance.getDefault().startClientTeam(3344);
-        NetworkTableInstance.getDefault().startDSClient();
-        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-        NetworkTableEntry camMode = table.getEntry("camMode");
-        NetworkTableEntry ledMode = table.getEntry("ledMode");
-        if(on){
-            camMode.setDouble(0);
-            ledMode.setDouble(3);
-
-        }   else{
-            camMode.setDouble(1);
-            ledMode.setDouble(1);
-        }
-        /**
-         * camMode(0) = visionProcessing
-         * camMode(1) = normal camera
-         * ledMode(0) = LED mode set in current pipeline
-         * ledMode(1) = force LED off
-         * ledMode(2) = force blink
-         * ledMode(3) = force on
-         */
-    }
 
     public void setSpeed(double speed){
         //forward???

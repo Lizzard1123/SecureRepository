@@ -2,3 +2,11 @@ Notes/Links;
 
 Limelight documentation:
 https://github.com/BREAD5940/frc-java-command-codebase/blob/temp_fixTeleop/src/main/java/frc/robot/subsystems/LimeLight.java
+
+https://docs.limelightvision.io/en/latest/cs_autorange.html
+
+https://docs.limelightvision.io/en/latest/cs_aiming.html
+
+https://docs.limelightvision.io/en/latest/cs_seeking.html
+
+https://docs.limelightvision.io/en/latest/cs_estimating_distance.html

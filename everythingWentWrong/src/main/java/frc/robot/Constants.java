@@ -7,7 +7,6 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -18,11 +17,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static double strafeSpeed;
+    public static double strafeSpeed= 40;
     public static double speedDivisor = 2;
-    public static double maxSpeed = 100;
-    public static double turtle = (RobotContainer.stickMain.getLeftTrigger());
-    public static double rabbit= (RobotContainer.stickMain.getRightTrigger());
+    public static double maxSpeed = 70;
+    public static double turtle = 40;
+    public static double rabbit= 100;
     public static double slow = turtle*100;
     public static double fast = rabbit*100;
     public static double lazySusanSpeed;

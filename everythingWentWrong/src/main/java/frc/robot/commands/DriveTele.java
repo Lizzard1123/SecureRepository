@@ -9,19 +9,18 @@ import frc.robot.subsystems.DriveTrain;
 //import frc.robot.Constants;
 
 public class DriveTele extends CommandBase{
+    private double maxSpeed;
     public DriveTele(DriveTrain driveTrain){
         addRequirements(driveTrain);
-        SmartDashboard.putNumber("Speed Divisor", Constants.speedDivisor);
     }
     public void initialize(){
-       // RobotContainer.mecanum.setSpeed(Constants.maxSpeed);
+       maxSpeed = SmartDashboard.getNumber("Max Drive Speed", Constants.maxSpeed);
     }
     public void execute(){
-        RobotContainer.mecanum.mecanumDrive(
-            RobotContainer.stickMain.getLeftJoyY()/(Constants.speedDivisor), 
-            RobotContainer.stickMain.getRightJoyY()/(Constants.speedDivisor),
-            RobotContainer.stickMain.getLeftTrigger()+100,
-            RobotContainer.stickMain.getRightTrigger()+100);
+        RobotContainer.mecanum.setMaxSpeed(maxSpeed);
+        RobotContainer.mecanum.tankDrive(
+            RobotContainer.stickMain.getLeftJoyY()/100, 
+            RobotContainer.stickMain.getRightJoyY()/100);
     }
     //-Constants.cruiseSpeed
     //-Constants.cruiseSpeed

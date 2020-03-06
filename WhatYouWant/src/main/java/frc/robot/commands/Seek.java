@@ -17,8 +17,8 @@ public class Seek extends CommandBase{
 
     }
     public void execute(){
-        leftDriveAdjust = Constants.autoDriveSpeed + RobotContainer.lime.getAimAdjust();
-        rightDriveAdjust = Constants.autoDriveSpeed + RobotContainer.lime.getAimAdjust();
+        leftDriveAdjust =RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
+        rightDriveAdjust = RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
 
         RobotContainer.lime.aim(RobotContainer.differential);
         RobotContainer.differential.differentialDrive(leftDriveAdjust, rightDriveAdjust);

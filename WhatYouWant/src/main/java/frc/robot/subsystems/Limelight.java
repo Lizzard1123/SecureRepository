@@ -52,8 +52,8 @@ public class Limelight extends SubsystemBase{
     }
 
     public void aim(DriveTrain drive){
-        float Kp = -0.1f;
-        float min_command = 0.05f;
+        float Kp = -0.1f; //originally -0.1f
+        float min_command = 0.04f; //originally 0.05f
 
         double txd = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
         float tx = (float)txd;

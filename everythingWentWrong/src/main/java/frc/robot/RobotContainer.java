@@ -24,6 +24,8 @@ import frc.robot.commands.LiftArm;
 import frc.robot.commands.LowerArm;
 import frc.robot.commands.LiftLift;
 import frc.robot.commands.LowerLift;
+import frc.robot.commands.LeftStrafe;
+import frc.robot.commands.RightStrafe;
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -52,12 +54,8 @@ public class RobotContainer {
 
     mecanum.setDefaultCommand(new DriveTele(mecanum));
 
-    SmartDashboard.putData(mecanum);
-    SmartDashboard.putData(m_autoCommand);
-    SmartDashboard.putData(susan);
-    SmartDashboard.putData(arm);
-    SmartDashboard.putData(lift);
-    SmartDashboard.putData(teleop);
+    SmartDashboard.putNumber("Max Drive Speed", Constants.maxSpeed);
+    SmartDashboard.putNumber("Strafe Speed", Constants.strafeSpeed);
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -75,6 +73,8 @@ public class RobotContainer {
      JoystickButton lowerArm = new JoystickButton(stickSecondary, XBox.RB_BUTTON);
      JoystickButton liftElevator = new JoystickButton(stickMain, XBox.LB_BUTTON);
      JoystickButton lowerElevator = new JoystickButton(stickMain, XBox.RB_BUTTON);
+    JoystickButton leftStrafe = new JoystickButton(stickMain, XBox.LEFT_TRIGGER);
+    JoystickButton rightStrafe = new JoystickButton(stickMain, XBox.RIGHT_TRIGGER);
 
       susanClockwise.whenHeld(new SpinClockwise(susan));
       susanCounterClockwise.whenHeld(new SpinCounterClockwise(susan));
@@ -82,7 +82,8 @@ public class RobotContainer {
       lowerArm.whenHeld(new LowerArm(arm));
       liftElevator.whenHeld(new LiftLift(lift));
       lowerElevator.whenHeld(new LowerLift(lift));
-     
+      leftStrafe.whileActiveContinuous(new LeftStrafe(mecanum));
+      rightStrafe.whileActiveContinuous(new RightStrafe(mecanum)); 
       
   }
 

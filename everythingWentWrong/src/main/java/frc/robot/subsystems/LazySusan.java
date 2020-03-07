@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class LazySusan extends SubsystemBase{
-    public final Spark lazySusanMotor = new Spark(4);
+    public final Spark lazySusanMotor = new Spark(5);
 
     public LazySusan(){
         super();

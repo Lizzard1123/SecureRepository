@@ -1,0 +1,103 @@
+1- Java basics:
+I mean like BASICS, basics.
+I'm asssuming the person reading this has never programmed anything in their life ever, 
+so I apologize if this may be redundant or seem patronizing. - C.Y.S.
+
+Intro:
+    Google: "Java is a general-purpose programming language that is class-based, object-oriented, 
+        and designed to have as few implementation dependencies as possible."
+
+    Basically, Java is a language where the classes (or interfaces) you create are treated like an object.
+    You can think of a Java object as both as a goal/objective or physical object.
+
+    Java has classes, meaning that different functions can be separated to be used in different files.
+        These functions that each class can do are methods and there are many different types.
+
+    If you've never programmed before, it makes sense with time and practice, I promise.
+
+    To make your program effective and with minimal errors, when you program in Java aim for high cohesion and low coupling.
+        Cohesion is the readability of the classes. This means comment your code, name variables reasonable things (driveSpeed instead of 
+        "ds" or "x"), and separate methods into relevant classes where their functions would more likely be.
+
+        Coupling is how much the classes interact with each other. This usually refers to dependency of variables. Low coupling prevents
+        you from changing a variable 4 classes up, and then having to change everything beneath it because there were many functions
+        that depended on that one variable.
+
+        I apologize, as I am guilty of not commenting my code and having many things dependent on one double T_T
+
+Primitives and built-in Java objects:
+    There are eight types of primitives in java:
+        byte (8 bits)
+            It can only store number values from -2^7 to 2^7 -1
+            whole numbers only
+            I've never seen this used ever
+        
+        short (16 bits)
+            It can only store number values from -2^15 to 2^15 - 1
+            whole numbers only
+
+        int (32 bits)
+            It can only store number values from 2^31 to 2^31 - 1
+            ints are a very common primitive used in java and are usually the primitive used to store whole numbers
+
+        long (64 bits)
+            Stores numbers from 2^63 to 2^63-1
+            whole numbers only
+            used for rounding in large, more complex calculations
+            uncommon
+        
+        float (32 bits)
+            used to store numbers with a decimal
+            relatively uncommon, but still occasionally used
+        
+        double (64 bits)
+            used to store numbers with a decimal
+            very common, as frequently used as ints
+        
+        char (16 bits)
+            used to store a single character
+            it can be any letter, number, or special character
+
+        boolean (1 bit)
+            used to store true or false
+
+        *primitives can also be treated as objects, but must be declared with capital letter
+         ^will be explained later
+    
+    Object you can create without importing anything:
+        String 
+            stores a character, word, sentence, or 3 page essay
+        
+        Array
+            stores data, can store primitives or objects, but stores same type of variable
+            once declared, has a fixed size
+            can be 2-dimensional like matricies
+            when referencing arrays, start at 0
+        
+        ArrayList //this may be wrong, sorry. Its been a while
+            similar to array, but size grows as variables are added
+            when referencing array lists, start at 0
+    
+Declaration:
+    You can declare primitives and objects the same way.
+    The standard for declaring primitives is much simpler, however.
+
+    Declaring int:
+        int exampleInt = 5;
+        *if you want to declare the variable without setting it equal to anything for PRIMITIVES ONLY you can do:
+        int exampleInt2; //this is automatically set to 0
+    
+    Declaring objects:
+        int[] arrayExample1 = new int[19]; //array will store up to 20 variables
+        VictorSPX driveMotor1 = new VictorSPX(0);
+        
+        Basically:
+        ObjectType objectName = new ObjectType(parameters);
+
+        EXCEPT for strings
+        
+        String exhausted = "ugh";
+        
+        String objects can also be set to nothing, only when you call the object it will return null
+
+        String oof;

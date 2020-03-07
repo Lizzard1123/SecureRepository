@@ -1,0 +1,27 @@
+2 - Main.java class
+
+
+To begin, most beginner projects have only the the Main.java and a Driver.java classes.
+I'll break down this project's Main.java class.
+
+package frc.robot; //this is the location of the file
+
+import edu.wpi.first.wpilibj.RobotBase; //imports are used to (literally) import methods, variables, etc. from another class or library
+
+public final class Main { //this is the class name
+  
+  //varaibles that will be used class wide are declared here
+
+  private Main() { //this is the constructor
+  /**
+   * the constructor instantiates variables declared above
+   * if nothing needs to be instantiated this can be left blank, or if necessary the super(); method can be called
+   * super(); will be explained later with hierarchy, interfaces, and abstraction
+  }
+
+  public static void main(String... args) { //this is the main method
+    RobotBase.startRobot(Robot::new); //this is saying "in the RobotBase class use method startRobot() and input the parameter Robot::new
+  }
+}
+
+

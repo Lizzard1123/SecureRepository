@@ -2,7 +2,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
-
+import frc.robot.commands.DriveTele;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
 
@@ -16,12 +16,12 @@ public class DriveTrain extends SubsystemBase{
     public DriveTrain(){
         super();
     }
-   public void periodic(){
-   }
-   // public void initDefaultCommand(){
-     //   setDefaultCommand(new DriveTele(RobotContainer.mecanum));
-    
-   // }
+    public void periodic(){
+
+    }
+   public void initDefaultCommand(){
+       setDefaultCommand(new DriveTele(RobotContainer.mecanum));
+    }
     
 
     public void tankDrive(double left, double right){ 
@@ -31,15 +31,16 @@ public class DriveTrain extends SubsystemBase{
         backRightDrive.set(ControlMode.PercentOutput, right);
         
     }
-    public void mecanumDrive(double left, double right){
-        frontRightDrive.set(ControlMode.PercentOutput, right);
-        frontLeftDrive.set(ControlMode.PercentOutput, left);
-        backLeftDrive.set(ControlMode.PercentOutput, left);
+    public void mecanumDrive(double left, double right){ //side that wheels turn away from each other go in that direction
+        //in the omni wheel bot, left*-1 (when left is inputed a positive value) made bot go forward i.e. right
+        frontRightDrive.set(ControlMode.PercentOutput, right*-1);
+        frontLeftDrive.set(ControlMode.PercentOutput, left*-1); //turns same direction as backRightDrive
+        backLeftDrive.set(ControlMode.PercentOutput, left);//turns same direction as frontRightDrive
         backRightDrive.set(ControlMode.PercentOutput, right);
     }
     
 
-    public void setMaxSpeed(double speed){
+    public void setMaxSpeed(double speed){//might not work with strafe, but let's find out!
          //forward???
          if(RobotContainer.stickMain.getRightJoyY()<0){
             frontRightDrive.configPeakOutputReverse(speed*-1/100);

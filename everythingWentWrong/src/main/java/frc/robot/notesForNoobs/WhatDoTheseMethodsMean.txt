@@ -1,0 +1,33 @@
+package frc.robot.subsystems;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+
+
+public class WhatDoTheseMethodsDo extends SubsystemBase{
+
+
+    public WhatDoTheseMethodsDo(){
+        super();
+    }
+    public void periodic(){
+
+    }
+   public void initDefaultCommand(){
+     
+    }
+    
+
+    public void tankDrive(double left, double right){ 
+
+        
+    }
+    public void mecanumDrive(double left, double right){
+       
+    }
+    
+
+    public void setMaxSpeed(double speed){
+    }
+         
+}

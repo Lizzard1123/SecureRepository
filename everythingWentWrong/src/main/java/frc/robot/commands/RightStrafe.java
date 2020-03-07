@@ -12,12 +12,13 @@ public class RightStrafe extends CommandBase{
     }
     public void initialize(){
        strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
+
     }
     public void execute(){
         strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
         RobotContainer.mecanum.mecanumDrive(
             strafeSpeed*-1/100, 
-            strafeSpeed/100);
+            strafeSpeed*-1/100);
         isFinished();
     }
     public boolean isFinished(){

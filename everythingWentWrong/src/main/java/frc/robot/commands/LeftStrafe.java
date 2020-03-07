@@ -16,7 +16,7 @@ public class LeftStrafe extends CommandBase{
     }
     public void execute(){
         strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
-        RobotContainer.mecanum.mecanumDrive(strafeSpeed, strafeSpeed*-1);
+        RobotContainer.mecanum.mecanumDrive(strafeSpeed/100, strafeSpeed/100);
         isFinished();
     }
     public boolean isFinished(){

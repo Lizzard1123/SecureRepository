@@ -9,7 +9,7 @@ import frc.robot.Constants;
 public class LeftStrafe extends CommandBase{
     private double strafeSpeed;
     public LeftStrafe(DriveTrain driveTrain){
-        addRequirements(driveTrain);
+        //addRequirements(driveTrain);
     }
     public void initialize(){
         strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);

@@ -6,10 +6,10 @@ import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Limelight;
 
-public class Seek extends CommandBase{
+public class Aim extends CommandBase{
     public static double leftDriveAdjust =0;
     public static double rightDriveAdjust = 0;
-    public Seek(DriveTrain drive, Limelight lime){
+    public Aim(DriveTrain drive, Limelight lime){
         addRequirements(drive);
 
     }
@@ -20,7 +20,7 @@ public class Seek extends CommandBase{
         leftDriveAdjust =RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
         rightDriveAdjust = RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
 
-        RobotContainer.lime.seek(RobotContainer.differential);
+        RobotContainer.lime.aim(RobotContainer.differential);
         RobotContainer.differential.differentialDrive(leftDriveAdjust, rightDriveAdjust);
         
     }

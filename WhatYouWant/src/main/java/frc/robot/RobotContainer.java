@@ -10,10 +10,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Autonomous;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.LazySusan;
@@ -28,17 +29,18 @@ import frc.robot.commands.LowerArm;
 import frc.robot.commands.LiftLift;
 import frc.robot.commands.LowerLift;
 import frc.robot.subsystems.Intake;
-import frc.robot.commands.TakeBall; 
+import frc.robot.commands.TakeBall;
 import frc.robot.commands.ShootBall;
 import frc.robot.commands.StopArm;
 import frc.robot.commands.StopIntake;
 import frc.robot.commands.StopLift;
 
 /**
- * This class is where the bulk of the robot should be declared.  Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
- * (including subsystems, commands, and button mappings) should be declared here.
+ * This class is where the bulk of the robot should be declared. Since
+ * Command-based is a "declarative" paradigm, very little robot logic should
+ * actually be handled in the {@link Robot} periodic methods (other than the
+ * scheduler calls). Instead, the structure of the robot (including subsystems,
+ * commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
@@ -49,9 +51,11 @@ public class RobotContainer {
   public static Arm arm = new Arm();
   public static Lift lift = new Lift();
   public static Intake take = new Intake();
-  public static AnalogGyro gyro = new AnalogGyro(0); //double check port #
+  public static AnalogGyro gyro = new AnalogGyro(0); // double check port #
   public static Limelight lime = new Limelight();
-  public static Autonomous m_autoCommand = new Autonomous(differential, arm, lime, take);
+  public static Encoder leftEnc = new Encoder(0, 1);
+  public static Encoder rightEnc = new Encoder(2, 3);
+  public static Autonomous m_autoCommand = new Autonomous(differential, arm, lime, take, leftEnc, rightEnc);
   //public static NetworkTable table = Robot.getTable();
 
 

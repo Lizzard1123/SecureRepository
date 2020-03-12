@@ -15,7 +15,7 @@ public class Limelight extends SubsystemBase{
     private double distance = 0;
     private double a1;
     private double a2;
-   
+    private float Kp = -0.1f;
     public double iniDistanceToObject(){
          //equation d = (h2-h1)/tan(a1+a2)
         a1 = angle1*180/Math.PI;
@@ -52,7 +52,7 @@ public class Limelight extends SubsystemBase{
     }
 
     public void aim(DriveTrain drive){
-        float Kp = -0.1f; //originally -0.1f
+        Kp = -0.1f; //originally -0.1f
         float min_command = 0.04f; //originally 0.05f
 
         double txd = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
@@ -67,7 +67,28 @@ public class Limelight extends SubsystemBase{
                 steering_adjust = Kp*heading_error + min_command;
         }
     }
+
+    public void seek(DriveTrain drive){
+        float tv = (float)NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
+        float tx = (float)NetworkTableInstance.getDefault().getTable("limelight").getEntry("tx").getDouble(0);
+
+        if (tv == 0.0f)
+        {
+        // We don't see the target, seek for the target by spinning in place at a safe speed.
+        steering_adjust = 0.3f;
+        }
+        else
+        {
+                // We do see the target, execute aiming code
+                float heading_error = tx;
+                steering_adjust = Kp * tx;
+        }
+
+    }
     public double getAimAdjust(){
+        return (double)steering_adjust;
+    }
+    public double getSeekAdjust(){
         return (double)steering_adjust;
     }
 }

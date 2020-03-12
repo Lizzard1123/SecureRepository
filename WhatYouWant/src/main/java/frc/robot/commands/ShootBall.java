@@ -18,7 +18,7 @@ public class ShootBall extends CommandBase{
         RobotContainer.take.yellowBoi(shootinTootin*-1);
     }
     public boolean isFinished(){
-        return false;
+        return true;
     }
     protected void end(){
         RobotContainer.take.yellowBoi(0);

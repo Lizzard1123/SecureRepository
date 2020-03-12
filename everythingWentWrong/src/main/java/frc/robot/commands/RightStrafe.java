@@ -6,19 +6,21 @@ import frc.robot.subsystems.*;
 import frc.robot.Constants;
 
 public class RightStrafe extends CommandBase{
-    private double strafeSpeed;
+    private DriveTrain drive = new DriveTrain();
+    private double maxStrafeSpeed;
     public RightStrafe(DriveTrain driveTrain){
+        drive = driveTrain;
         //addRequirements(driveTrain);
     }
     public void initialize(){
-       strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
+       maxStrafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
 
     }
     public void execute(){
-        strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
-        RobotContainer.mecanum.mecanumDrive(
-            strafeSpeed*-1/100, 
-            strafeSpeed*-1/100);
+        maxStrafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
+        drive.mecanumDrive(
+            RobotContainer.stickMain.getRightTrigger(), 
+            RobotContainer.stickMain.getRightTrigger());
         isFinished();
     }
     public boolean isFinished(){

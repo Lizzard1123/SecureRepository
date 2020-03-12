@@ -6,17 +6,20 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 //import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.*;
 import frc.robot.Constants;
+import frc.robot.subsystems.*;
 public class LeftStrafe extends CommandBase{
-    private double strafeSpeed;
+    private double maxStrafeSpeed;
+    private DriveTrain drive = new DriveTrain();
     public LeftStrafe(DriveTrain driveTrain){
+        drive = driveTrain;
         //addRequirements(driveTrain);
     }
     public void initialize(){
-        strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
+        maxStrafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
     }
     public void execute(){
-        strafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
-        RobotContainer.mecanum.mecanumDrive(strafeSpeed/100, strafeSpeed/100);
+        maxStrafeSpeed = SmartDashboard.getNumber("Strafe Speed", Constants.strafeSpeed);
+        drive.mecanumDrive(RobotContainer.stickMain.getLeftTrigger(), RobotContainer.stickMain.getRightTrigger());
         isFinished();
     }
     public boolean isFinished(){

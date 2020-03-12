@@ -35,6 +35,9 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     RobotContainer.gyro.reset();
+    RobotContainer.leftEnc.setDistancePerPulse(Constants.distancePerPulse); //REMEMBER TO LOOK UP NUMBER OF PULSES PER REVOLUTION AND MULTIPLY #ofPulses/360
+    RobotContainer.rightEnc.setDistancePerPulse(Constants.distancePerPulse); //orignally had 1/360*2*Math.PI*1.5
+
   }
 
   /**
@@ -112,6 +115,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    SmartDashboard.putNumber("Left Encoder Distance", RobotContainer.leftEnc.getDistance());
+    SmartDashboard.putNumber("Left Encoder Rate", RobotContainer.leftEnc.getRate());
+    SmartDashboard.putNumber("Right Encoder Distance", RobotContainer.rightEnc.getDistance());
+    SmartDashboard.putNumber("Right Encoder Rate", RobotContainer.rightEnc.getRate());
   }
 
   @Override

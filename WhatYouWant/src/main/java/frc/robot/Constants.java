@@ -32,6 +32,9 @@ public final class Constants {
     public static double timer2 = 1.65;
 
     public static boolean limeMode = true;
+
+    public static double driveWheelDiameter = 6;//inches
+    public static double distancePerPulse = driveWheelDiameter*Math.PI/360; //2*pi*r*#ofPulsesPerRevolution/360
     
     /**
      * Motor Numbers

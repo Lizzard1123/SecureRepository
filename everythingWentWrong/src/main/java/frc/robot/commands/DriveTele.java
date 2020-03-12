@@ -10,15 +10,17 @@ import frc.robot.subsystems.DriveTrain;
 
 public class DriveTele extends CommandBase{
     private double maxSpeed;
+    private DriveTrain drive = new DriveTrain();
     public DriveTele(DriveTrain driveTrain){
         addRequirements(driveTrain);
+        drive = driveTrain;
     }
     public void initialize(){
        maxSpeed = SmartDashboard.getNumber("Max Drive Speed", Constants.maxSpeed);
     }
     public void execute(){
-        RobotContainer.mecanum.setMaxSpeed(maxSpeed);
-        RobotContainer.mecanum.tankDrive(
+        drive.setMaxSpeed(maxSpeed);
+        drive.tankDrive(
             RobotContainer.stickMain.getLeftJoyY()/100, 
             RobotContainer.stickMain.getRightJoyY()/100);
     }

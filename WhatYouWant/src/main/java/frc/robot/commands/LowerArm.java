@@ -1,3 +1,6 @@
+/**
+ * When called upon, the arm motor moves at the speed specified on the SmartDashboard.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

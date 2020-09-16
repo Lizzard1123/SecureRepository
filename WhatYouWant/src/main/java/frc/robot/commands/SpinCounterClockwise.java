@@ -1,3 +1,8 @@
+/**
+ * Spins ccw
+ * Again, I would've been able to test it, IF WE HAD IT'
+ * I'm lookin' at you build team t(-_-t)
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;

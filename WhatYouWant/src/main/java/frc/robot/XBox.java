@@ -1,3 +1,8 @@
+/**
+ * Instantiates button numbers to names, so we can read this more easily.
+ * It says XBox, but should work for any controller compatible with windows.
+ * I THINK the getButton() methods just grab whether or not the button is pressed
+ */
 package frc.robot; 
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -94,6 +99,8 @@ public class XBox extends Joystick{
     	return getRawAxis(LEFT_TRIGGER);
     }
 }
-
+//heres another BOP: Years & Years - If You're Over Me
+//♫ Well you should set me free, ♫
+//♫ Baby, if you're over me ♫
     
    

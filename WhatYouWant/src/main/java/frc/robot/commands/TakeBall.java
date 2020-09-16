@@ -1,3 +1,6 @@
+/**
+ * Rotates roller in direction to take the balls at speed specified on SmartDashboard.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;

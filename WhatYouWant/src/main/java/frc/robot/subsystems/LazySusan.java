@@ -1,3 +1,9 @@
+/**
+ * Yes, I named the Lazy Susan motor "Sheryl."
+ * What're you gonna do, change it?
+ * Do it, coward.
+ * Class instantiates lazy susan motor and sets up spinSusan() method to spin le susan
+ */
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.*;

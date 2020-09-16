@@ -1,3 +1,8 @@
+/**
+ * When called upon, the arm motor moves at the speed specified on the SmartDashboard.
+ * I hope you are as amused as I am when I named the variables and methods.
+ * :D
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -6,6 +11,7 @@ import frc.robot.subsystems.Lift;
 import frc.robot.RobotContainer;
 
 public class LowerLift extends CommandBase{
+
     private double downWeGo;
     public LowerLift(Lift lift){
         addRequirements(lift);

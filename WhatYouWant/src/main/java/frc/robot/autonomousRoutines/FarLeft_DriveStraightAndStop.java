@@ -1,3 +1,7 @@
+/**
+ * Purpose of this program is to start on the far left of the field, drive straight, then stop.
+ * The bot will drive to a specified distance.
+ */
 package frc.robot.autonomousRoutines;
 
 import edu.wpi.first.wpilibj.Encoder;

@@ -1,3 +1,6 @@
+/**
+ * Using the limelight's aim adjust api, the bot will get into a certain position to line up to the upper goal.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -16,7 +19,12 @@ public class Aim extends CommandBase{
     public void initialize(){
 
     }
+    /**
+     * left/rightDriveAdjust variables are called upon and used in the .differentialDrive() method, which will make the robot
+     * go the speed of whatever DriveAdjust is
+     */
     public void execute(){
+        
         leftDriveAdjust =RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
         rightDriveAdjust = RobotContainer.lime.getAimAdjust(); // Constants.autoDriveSpeed + 
 

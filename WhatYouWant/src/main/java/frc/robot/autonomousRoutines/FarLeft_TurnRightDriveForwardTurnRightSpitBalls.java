@@ -1,3 +1,10 @@
+/**
+ * Purpose of this program is to follow up FarLeft_DriveForwardLowerArmGrabTwoTrenchBalls. 
+ * The bot should turn around (somebody needs to measure what distance the wheels travel in order to make a 180).
+ * (The bot might have to back up first)
+ * After it turns around, it should go towards the lower goal, raise the arm to a certain distance, and spit out the balls.
+ * Bot might have to back out of the way, but it currently just stops.
+ */
 package frc.robot.autonomousRoutines;
 
 import edu.wpi.first.wpilibj.Encoder;

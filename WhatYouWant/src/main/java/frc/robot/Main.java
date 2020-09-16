@@ -1,3 +1,30 @@
+/**
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * oh yeah, and don't touch this class unless you are ABSOLUTELY sure what you are doing.
+ * Otherwise you will mess up EVERYTHING in this ENTIRE program, as this is the driving class.
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * 
+ */
 /*----------------------------------------------------------------------------*/
 /* Copyright (c) 2018-2019 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
@@ -6,7 +33,7 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-
+//heyyyyyyyyyyyyyyyyyyyyy don't touch these, either (✿◠‿◠) 
 import edu.wpi.first.wpilibj.RobotBase;
 
 /**
@@ -15,7 +42,7 @@ import edu.wpi.first.wpilibj.RobotBase;
  * call.
  */
 public final class Main {
-  private Main() {
+  private Main() { //im watching you ᕙ( ︡'︡益'︠)ง
   }
 
   /**
@@ -23,7 +50,31 @@ public final class Main {
    *
    * <p>If you change your main robot class, change the parameter type.
    */
-  public static void main(String... args) {
-    RobotBase.startRobot(Robot::new);
+  public static void main(String... args) {//don't touch this ≧◉◡◉≦
+    RobotBase.startRobot(Robot::new); //this, too  (•◡•) /
   }
 }
+
+/**
+ * Gotta put it here because some of you are EXTRA stupid.
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ * DO NOT TOUCH THIS CLASS
+ */
+//dont try me punk (ง︡'-'︠)ง imma send you to the gulag ☭ prepare to lose your humanity, and start making buttons, we need branding

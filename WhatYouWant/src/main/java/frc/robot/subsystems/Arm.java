@@ -17,6 +17,7 @@ public class Arm extends SubsystemBase{
            
     }
     public void moveArm(double speed){
+        //other classes call on this funciton to move the armMotor at double speed
         armMotor.set(ControlMode.PercentOutput, speed/100);
     }
 }

@@ -1,3 +1,8 @@
+/**
+ * Once you get past the mountain of imports, it sets each motor to its respective port.
+ * Instantiates variables to the SmartDashboard, and commands to buttons.
+ * Theres also something about autonomous here on the bottom, but I forgot what that method does. ^( '-' )^
+ */
 /*----------------------------------------------------------------------------*/
 /* Copyright (c) 2018-2019 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */

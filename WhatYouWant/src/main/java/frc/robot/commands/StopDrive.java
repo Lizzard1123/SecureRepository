@@ -1,3 +1,6 @@
+/**
+ * After the arm incident, we decided to make this class, as well. It has no use for teleop, so it's only utilized during autonomous.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

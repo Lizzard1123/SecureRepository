@@ -1,3 +1,7 @@
+/**
+ * The key to this teams sucess: ✯the lift✯
+ * Instantiates the lift motor and sets the speed of the lift when the function is calle upon
+ */
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;

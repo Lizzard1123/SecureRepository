@@ -1,3 +1,8 @@
+/**
+ * We were having some troubles, as the arm didn't stop rotating even after the button was released.
+ * We made this instead, so it calls upon a function to actually force it to stop.
+ * Listen, idk either.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

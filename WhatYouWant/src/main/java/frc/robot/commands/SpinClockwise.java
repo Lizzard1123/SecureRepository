@@ -1,3 +1,7 @@
+/**
+ * Should spin cc based off a top view
+ * Never used, so idk if this works
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -6,7 +10,7 @@ import frc.robot.subsystems.LazySusan;
 import frc.robot.RobotContainer;
 
 public class SpinClockwise extends CommandBase{
-    private double turnyTurny;
+    private double turnyTurny; //bring it around town
     public SpinClockwise(LazySusan lazy){
         addRequirements(lazy);
     }

@@ -1,3 +1,6 @@
+/**
+ * Theres alot here, and I'm not entirely sure because I don't remember!ύ.ὺ
+ */
 package frc.robot.subsystems;
 
 import edu.wpi.first.networktables.NetworkTable;

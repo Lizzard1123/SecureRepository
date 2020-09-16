@@ -1,3 +1,6 @@
+/**
+ * Instantiates the DriveTrain object and all the methods that can be accessed from it.
+ */
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -37,7 +40,7 @@ public class DriveTrain extends SubsystemBase{
     public void initDefaultCommand(){
         //setDefaultCommand(new DriveTele(RobotContainer.differential, RobotContainer.stickMain));
     }
-
+    //sets motor speed to either double leftSpeed or double rightSpeed
     public void differentialDrive(double leftSpeed, double rightSpeed){
         /**
          * if(leftSpeed<5 && leftSpeed>-5){leftSpeed = 0;}
@@ -70,6 +73,8 @@ public class DriveTrain extends SubsystemBase{
             frontLeftDrive.configPeakOutputReverse(speed*-1*.975/100);
             backLeftDrive.configPeakOutputReverse(speed*-1*.975/100);
         }
+        //phoenix motors operate from -1.0 to 1.0 and speed is from -100 to 100, so division must be made
+        //totally found that out before an injury, ha 
         
 
     }

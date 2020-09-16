@@ -1,3 +1,8 @@
+/**
+ * Maybe because these functions are mapped to a button...?
+ * Whatever.
+ * Stops the intake after TakeBall and ShootBall are no longer being called upon.
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

@@ -1,3 +1,9 @@
+/**
+ * Purpose of this class is to instantiate a function that can be called upon when making autonomous code.
+ * For some reason unbeknownst to me, armBoi cannot grab the value from the SmartDashboard in initialize(), so it has to be in execute.
+ * This also allows for any changes that need to be made for specifically autonomous movement with the arm that might affect 
+ * the LowerArm.java class such as the timer stuff (thx Colin)
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

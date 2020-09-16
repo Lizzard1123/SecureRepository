@@ -1,3 +1,11 @@
+/**
+ * This is a command that should only be used in autonomousRoutines.
+ * In case you haven't already noticed, I copied pasted half of the code from other files, that's why theres like 8
+ * separate files where the comment //might delete later is above isFinished();
+ * This class has the robot drive straight for a certain amount of time, that amount is grabbed from the Constants class.
+ * A better command to use instead of this is DriveToDistance because it should be more precise.
+ * Emphasis on "should"
+ */
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;

@@ -1,3 +1,9 @@
+/**
+ * Purpose of this program is for the robot to start on the far left of the field and grab two balls in the trench.
+ * (I'm not sure what left this is relative to.)
+ * The robot should drive forward, lower arm, and start intake for long enough to grab two balls.
+ * Be sure to measure the distance it has to travel because it will drive to a certain distance, not a set amount of time.
+ */
 package frc.robot.autonomousRoutines;
 
 import edu.wpi.first.wpilibj.Encoder;
